@@ -1,55 +1,90 @@
+/* Simple & Modern CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f7f8fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+}
+.btn:hover {
+  background: #f0f2f5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+.btn-secondary {
+  background: #e5e7eb;
+  color: #222;
+}
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* Button Group */
 .btn-group {
   display: flex;
-
-  align-items: flex-start;
+  gap: 12px;
 }
-
 .btn-group.vertical {
   flex-direction: column;
-  gap: 18px;
 }
-
 .btn-group.horizontal {
   flex-direction: row;
-  gap: 10px;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  padding: 0 14px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-  transition-duration: 0.4s;
-}
-
-.btn:hover {
-  filter: brightness(0.9);
-}
-
-.btn:active {
-  transform: translateY(6.5px);
-}
-
+/* Loader */
 .hloader {
-  --hloader-color: white;
-  --hloader-size: 20px;
+  --hloader-color: #2563eb;
+  --hloader-size: 24px;
   --hloader-weight: 3px;
   --hloader-duration: 1s;
   width: var(--hloader-size);
   height: var(--hloader-size);
-  color: var(--hloader-color);
-  border: var(--hloader-weight) solid;
+  border: var(--hloader-weight) solid var(--hloader-color);
   border-top-color: transparent;
   border-radius: 50%;
-  box-sizing: border-box;
   animation: hloader var(--hloader-duration) infinite linear;
 }
 @keyframes hloader {
@@ -61,27 +96,64 @@
   }
 }
 
-.btn-secondary {
-  background-color: lightgray;
-  box-shadow: 0 7px 0px #b9b9b9;
-  color: #333;
+/* Utility */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
-.btn-secondary:active {
-  box-shadow: 0 0.5px 0px rgb(84, 108, 51);
-}
-
-.btn-primary {
-  background-color: green;
-  box-shadow: 0 7px 0px rgb(84, 108, 51);
-}
-.btn-primary:active {
-  box-shadow: 0 0.5px 0px rgb(84, 108, 51);
-}
-.btn-danger {
-  background: red;
-  box-shadow: 0 7px 0px #e30404;
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
-.btn-danger:active {
-  box-shadow: 0 0.5px 0px #e30404;
+/* Inputs */
+input,
+select,
+textarea {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
 }
